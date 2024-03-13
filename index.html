@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1.0">
+    <title>BMI Calculator</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <h1>BMI CALCULATOR</h1>
+        </nav>
+    </header>
+    <main>
+        <div class="main-container">
+            <div class="container-item">
+                <h2>Form BMI</h2>
+                <span>Berat badan ideal adalah impian semua orang. Tidak hanya memiliki bentuk tubuh yang menunjang penampilan, berat badan ideal juga menandakan kondisi tubuh yang sehat. Bagaimana denganmu? </span>
+                <span id="block">Yuk, hitung sekarang di kalkulator BMI.</span>
+                <section class="container-form">
+                    <div>
+                        <label for="sexType">Jenis Kelamin</label><br>
+                        <div class="wrapper" id="sexlabel">
+                            <input type="radio" name="select" value="male" id="option-1" checked>
+                            <input type="radio" name="select" value="female" id="option-2">
+                            <label for="option-1" class="option option-1">
+                            <div class="dot"></div>
+                                <span> Laki-Laki</span>
+                                </label>
+                            <label for="option-2" class="option option-2">
+                            <div class="dot"></div>
+                                <span> Perempuan</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div>
+                        <label for="mbody">Berat Badan (kg)</label><br>
+                        <input type="number" name="mbody" id="mbody" max="150">
+                    </div>
+                    <div>
+                        <label for="hbody">Tinggi Badan (cm)</label><br>
+                        <input type="number" name="hbody" id="hbody" max="250">
+                    </div>
+                    <div>
+                        <label for="age">Usia (tahun)</label><br>
+                        <input type="number" name="age" id="age">
+                    </div>
+                    <button type="button" id="hitung" onclick="calculateBMI()">Hitung BMI</button>
+                    <button type="reset" id="reset" onclick="resett()">Reset</button>
+                </section>
+                <span>Keunggulan Fitur</span> 
+                 <ol type="1">
+                    <li>Menghitung Berat Badan</li>
+                    <li>Menentukan Kategori Berat Badan Ideal atau Tidak</li>
+                    <li>Mempersiapkan Program Penurunan Berat Badan</li>
+                 </ol>
+                 <span>Kalkulator ini hanya boleh digunakan oleh orang dewasa (wanita hamil atau menyusui tidak boleh mengandalkan BMI ini) dan tidak ada tindakan yang harus diambil berdasarkan nilainya selain berkonsultasi dengan orang yang memenuhi syarat seperti dokter.</span><br><br>
+                 <span>Kalkulator akan memberi Anda gambaran tentnag perbandingan berat badan Anda dengan nilai umum. Indeks Masa Tubuh (atau BMI) dihitung sebagai berat badan Anda (dalam Kilogram) dibagi dengan kuadrat tinggi badan Anda (dalam Meter)</span>         
+            </div>
+            <div class="container-item">
+                <h2>Result</h2>
+                <section class="container-result">
+                    <div class="text-res">
+                        <span id="gen"></span><span> - </span><span id="nextGen"></span>
+                    </div>
+                    <h4 id="usia"></h4>
+                    <h1 id="result">0</h1>
+                    <h4 id="interpretation"></h4>
+                    <button type="button" id="hasilbmi">Download Hasil BMI</button>
+                </section>
+                <div class="swhd">
+                    <span id="resNum"></span>
+                    <span id="resDesc"></span>
+                    <span id="desc1"></span>
+                    <span id="desc2"></span>
+                </div>
+                <div class="btnCR">
+                    <button type="button" id="konsul">Konsultasi Ahli Gizi Via Aplikasi</button>
+                    <button type="button" id="regist">Registrasi Online Ahli Gizi</button>
+                </div>
+                <span>BMI tidak sepenuhnya mewakili diagnosis menyeluruh dari kesehatan tubuh dan resiko penyakit seseorang, Anda perlu konsultasi lebih lanjut mengenai resiko dan kekhawatiran Anda terkait dengan berat badan Anda.</span>
+                <section class="container-result-bot" id="cont-bot">
+                    <span id="cond"></span>
+                    <div class="penyakit" id="penyakit-gmk" style="display: none;">
+                        <span>Diabetes</span>
+                        <span>Hipertensi</span>
+                        <span>Sakit Jantung</span>
+                        <span>Ostheoarthritis</span>
+                    </div>
+                    <div class="penyakit" id="penyakit-krs" style="display: none;">
+                        <span>Jantung</span>
+                        <span>Gangguan Hormon</span>
+                        <span>Kanker</span>
+                        <span>Infeksi</span>
+                    </div>
+                    <div class="penyakit" id="penyakit-obs" style="display: none;">
+                        <span>Serangan Jantung</span>
+                        <span>Stroke</span>
+                        <span>Batu Empedi</span>
+                        <span>Hipertensi</span>
+                    </div>
+                    <div class="penyakit" id="penyakit-idl" style="display: none;">
+                        <span>Tidak Ada</span>
+                    </div>
+                    <div class="btnCR">
+                        <button type="button" id="konsul">Konsultasi Dokter Via Aplikasi</button>
+                        <button type="button" id="regist">Registrasi Online Sekarang</button>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <p>@RevoU - 2024</p>
+    </footer>
+    <script src="js/script.js"></script>
+</body>
+</html>
