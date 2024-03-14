@@ -1,9 +1,11 @@
 function calculateBMI() {
+    //Fungsi utama dari Kalkulator BMI, berisi deklarasi variabel dan operasi penghitungan BMI
     var weight = document.getElementById('mbody').value;
     var height = document.getElementById('hbody').value;
     var gender = document.querySelector('input[name="select"]:checked').value;
     var usia = document.getElementById('age').value;
     
+    //Berisi validasi input, agar menginputkan nilai sesuai yang ada di lapangan
     if (weight > 250 && height > 250 && usia > 150){
         alert("Masukkan Berat Badan, Tinggi Badan atau Usia Anda dengan Benar!");    
     } else if (weight > 0 && height > 0 && usia > 0) {
@@ -33,7 +35,7 @@ function calculateBMI() {
 
 }
 
-function penyakit(bmi,gender){
+function penyakit(bmi,gender){ //Fungsi yang bertujuan untuk memilih penyakit mana yang mungkin muncul berdasarkan nilai BMI dan Gender
     var a = document.getElementById("penyakit-krs");
     var b = document.getElementById("penyakit-idl");
     var c = document.getElementById("penyakit-gmk");
@@ -54,7 +56,7 @@ function penyakit(bmi,gender){
             a.style.display = "none";
             b.style.display = "none";
             d.style.display = "none";
-        } else if (bmi >= 27.90 && a.style.display === "none") {
+        } else if (bmi >= 27.90 && d.style.display === "none") {
             d.style.display = "block";
             a.style.display = "none";
             b.style.display = "none";
@@ -76,7 +78,7 @@ function penyakit(bmi,gender){
             a.style.display = "none";
             b.style.display = "none";
             d.style.display = "none";
-        } else if (bmi >= 27.90 && a.style.display === "none") {
+        } else if (bmi >= 27.90 && d.style.display === "none") {
             d.style.display = "block";
             a.style.display = "none";
             b.style.display = "none";
@@ -85,7 +87,7 @@ function penyakit(bmi,gender){
     }
 }
 
-function interpretBMI(bmi, gender) {
+function interpretBMI(bmi, gender) { //Fungsi yang bertujuan untuk menentukan kondisi tubuh berdasarkan nilai BMI dan Gender
     if (gender === 'male') {
         if (bmi < 18.50) {
             return 'Underweight';
@@ -109,7 +111,7 @@ function interpretBMI(bmi, gender) {
     }
 }
 
-function nxGen(bmi, gender) {
+function nxGen(bmi, gender) { //Fungsi yang bertujuan untuk menentukan kondisi tubuh berdasarkan nilai BMI dan Gender
     if (gender === 'male') {
         if (bmi < 18.50) {
             return 'Berat Badan Kurang';
@@ -133,7 +135,7 @@ function nxGen(bmi, gender) {
     }
 }
 
-function genz(gender){
+function genz(gender){ //Fungsi untuk menentukan Jenis kelamin
     if (gender === 'male'){
         return 'Laki-Laki';
     }
@@ -142,7 +144,7 @@ function genz(gender){
     }
 }
 
-function desc1(bmi,gender){ 
+function desc1(bmi,gender){ //Fungsi untuk memberikan penjelasan atau deskripsi kondisi seseorang berdasarkan nilai BMI dan Gender
     if (gender === 'male') {
         if (bmi < 18.50) {
             return 'Cara terbaik untuk meningkatkan berat badan adalah makan dengan porsi sedikit, namun sering serta sempatkanlah untuk mengonsumsi minuman berkalori tinggi, misalnya milkshake.';
@@ -166,7 +168,7 @@ function desc1(bmi,gender){
     } 
 }
 
-function desc2(bmi,gender){ 
+function desc2(bmi,gender){ //Fungsi untuk memberikan penjelasan atau deskripsi kondisi seseorang berdasarkan nilai BMI dan Gender
     if (gender === 'male') {
         if (bmi < 18.50) {
             return 'Jika BMI Anda dalam kategori ini maka Anda dianjurkan untuk meningkatkan berat badan hingga batas normal.';
@@ -190,7 +192,7 @@ function desc2(bmi,gender){
     }
 }
 
-function cond(bmi,gender){ 
+function cond(bmi,gender){ //Fungsi yang bertujuan untuk menentukan kondisi tubuh berdasarkan nilai BMI dan Gender
     if (gender === 'male') {
         if (bmi < 18.50) {
             return 'Terlalu Kurus';
@@ -214,7 +216,7 @@ function cond(bmi,gender){
     }
 }
 
-function resett() {
+function resett() { //Fungsi untuk me-reset input
     document.getElementById("mbody").value = "";
     document.getElementById("hbody").value = "";
     document.getElementById('age').value = "";
